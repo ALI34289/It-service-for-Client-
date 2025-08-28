@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Service Sales Lead Form</title>
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Form Container */
+        .form-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        /* Form Fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Important */
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="tel"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 120px;
+        }
+
+        /* Placeholder styling */
+        ::placeholder {
+            color: #95a5a6;
+        }
+
+        /* Submit Button */
+        .submit-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .form-container {
+                margin: 20px auto;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>IT Service Sales Lead</h1>
+        <!--
+            Backend Integration Note:
+            To connect this form to a backend, you need to:
+            1. Set the `action` attribute of the <form> tag to your backend endpoint URL.
+            2. Set the `method` attribute to "POST" (recommended for forms).
+            3. Ensure your backend is set up to handle form data submission.
+
+            For Google Sheets integration, you can use a service like Google Apps Script
+            to create a web app that acts as an intermediary between your form and the sheet.
+            The script's URL would be used as the form's `action`.
+        -->
+        <form action="#" method="POST" id="lead-form">
+            <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" name="fullName" placeholder="e.g., John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="designation">Designation/Role</label>
+                <input type="text" id="designation" name="designation" placeholder="e.g., IT Manager" required>
+            </div>
+            <div class="form-group">
+                <label for="business-name">Business Name</label>
+                <input type="text" id="business-name" name="businessName" placeholder="e.g., Innovate Corp" required>
+            </div>
+            <div class="form-group">
+                <label for="business-address">Business Address</label>
+                <input type="text" id="business-address" name="businessAddress" placeholder="e.g., 123 Tech Street, Silicon Valley, CA" required>
+            </div>
+            <div class="form-group">
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" name="phoneNumber" placeholder="e.g., (123) 456-7890" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" placeholder="e.g., john.doe@example.com" required>
+            </div>
+            <div class="form-group">
+                <label for="business-type">Type of Business</label>
+                <select id="business-type" name="businessType" required>
+                    <option value="" disabled selected>Select your business type</option>
+                    <option value="technology">Technology</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="finance">Finance</option>
+                    <option value="education">Education</option>
+                    <option value="retail">Retail</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="current-tools">Current IT/Software Tools</label>
+                <textarea id="current-tools" name="currentTools" placeholder="List any relevant IT or software tools your business currently uses."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="interested-services">Interested Services</label>
+                <select id="interested-services" name="interestedServices" required>
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="managed-it">Managed IT Services</option>
+                    <option value="cloud-solutions">Cloud Solutions</option>
+                    <option value="cybersecurity">Cybersecurity</option>
+                    <option value="software-development">Custom Software Development</option>
+                    <option value="consulting">IT Consulting</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="budget-readiness">Budget Readiness</label>
+                <select id="budget-readiness" name="budgetReadiness" required>
+                    <option value="" disabled selected>Select budget status</option>
+                    <option value="ready">Budget Approved</option>
+                    <option value="planning">Planning/Approval Phase</option>
+                    <option value="exploring">Exploring Options</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="timeline">Timeline to Implement</label>
+                <select id="timeline" name="timeline" required>
+                    <option value="" disabled selected>Select a timeline</option>
+                    <option value="0-3">0-3 Months</option>
+                    <option value="3-6">3-6 Months</option>
+                    <option value="6-12">6-12 Months</option>
+                    <option value="12+">12+ Months</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="additional-notes">Additional Notes</label>
+                <textarea id="additional-notes" name="additionalNotes" placeholder="Any other information you'd like to share?"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <!--
+        JavaScript can be added here for form validation or to handle form submission
+        asynchronously (e.g., using fetch to send data to the backend without a page reload).
+    -->
+    <script>
+        // Example: You could add JavaScript to handle form submission
+        // document.getElementById('lead-form').addEventListener('submit', function(event) {
+        //     event.preventDefault(); // Prevent default form submission
+        //     console.log('Form submitted!');
+        //     // Add your data submission logic here (e.g., using fetch)
+        // });
+    </script>
+
+</body>
+</html>
