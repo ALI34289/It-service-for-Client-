@@ -45,6 +45,7 @@
         input[type="text"],
         input[type="email"],
         input[type="tel"],
+        input[type="file"],
         select,
         textarea {
             width: 100%;
@@ -59,6 +60,7 @@
         input[type="text"]:focus,
         input[type="email"]:focus,
         input[type="tel"]:focus,
+        input[type="file"]:focus,
         select:focus,
         textarea:focus {
             border-color: #3498db;
@@ -68,6 +70,26 @@
         textarea {
             resize: vertical;
             height: 120px;
+        }
+
+        input[type="file"] {
+            background-color: #ffffff;
+        }
+
+        input[type="file"]::file-selector-button {
+            padding: 12px 15px;
+            margin: -12px 8px -12px -12px;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="file"]::file-selector-button:hover {
+            background-color: #2980b9;
         }
 
         /* Placeholder styling */
@@ -128,6 +150,10 @@
                 <input type="text" id="full-name" name="fullName" placeholder="e.g., John Doe" required>
             </div>
             <div class="form-group">
+                <label for="agent-ref-id">Agent Reference ID</label>
+                <input type="text" id="agent-ref-id" name="agentRefId" placeholder="e.g., AGENT12345">
+            </div>
+            <div class="form-group">
                 <label for="designation">Designation/Role</label>
                 <input type="text" id="designation" name="designation" placeholder="e.g., IT Manager" required>
             </div>
@@ -167,11 +193,11 @@
                 <label for="interested-services">Interested Services</label>
                 <select id="interested-services" name="interestedServices" required>
                     <option value="" disabled selected>Select a service</option>
-                    <option value="managed-it">Managed IT Services</option>
-                    <option value="cloud-solutions">Cloud Solutions</option>
-                    <option value="cybersecurity">Cybersecurity</option>
-                    <option value="software-development">Custom Software Development</option>
-                    <option value="consulting">IT Consulting</option>
+                    <option value="digital-marketing">Digital Marketing</option>
+                    <option value="web-development">Web Development</option>
+                    <option value="app-development">App Development</option>
+                    <option value="software-development">Software Development</option>
+                    <option value="ui-ux-design">UX/UI Design</option>
                 </select>
             </div>
             <div class="form-group">
@@ -192,6 +218,10 @@
                     <option value="6-12">6-12 Months</option>
                     <option value="12+">12+ Months</option>
                 </select>
+            </div>
+            <div class="form-group">
+                <label for="payment-screenshot">Payment Screenshot</label>
+                <input type="file" id="payment-screenshot" name="paymentScreenshot" accept="image/*">
             </div>
             <div class="form-group">
                 <label for="additional-notes">Additional Notes</label>
