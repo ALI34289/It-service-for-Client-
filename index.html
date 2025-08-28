@@ -134,17 +134,14 @@
     <div class="form-container">
         <h1>IT Service Sales Lead</h1>
         <!--
-            Backend Integration Note:
-            To connect this form to a backend, you need to:
-            1. Set the `action` attribute of the <form> tag to your backend endpoint URL.
-            2. Set the `method` attribute to "POST" (recommended for forms).
-            3. Ensure your backend is set up to handle form data submission.
-
-            For Google Sheets integration, you can use a service like Google Apps Script
-            to create a web app that acts as an intermediary between your form and the sheet.
-            The script's URL would be used as the form's `action`.
+            Form Submission Note:
+            This form is configured to work with Formspree, a free service for handling form submissions.
+            To make it work, you need to:
+            1. Create a new form on formspree.io.
+            2. Get your unique Formspree URL (e.g., https://formspree.io/f/your-unique-id).
+            3. Replace the placeholder URL in the `action` attribute of the <form> tag below with your unique URL.
         -->
-        <form action="#" method="POST" id="lead-form">
+        <form action="https://formspree.io/f/your-unique-id" method="POST" id="lead-form">
             <div class="form-group">
                 <label for="full-name">Full Name</label>
                 <input type="text" id="full-name" name="fullName" placeholder="e.g., John Doe" required>
